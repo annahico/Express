@@ -26,3 +26,8 @@ DATABASE_URL=mysql://root:1234@localhost:3307
 ```sh
 npx sequelize-cli init
 ```
+
+```sh
+npx sequelize-cli model:generate --name Role --attributes name:string
+```
+
