@@ -1,4 +1,7 @@
 const express = require('express');
+// requestAnimationFrame('dotenv').config() //asi usamos en una linia las dos siguientes
+const dotenv = require ('dotenv')
+dotenv.config();
 
 const app = express();
 
