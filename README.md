@@ -1,0 +1,28 @@
+### Sequelize instalattion
+
+npm install --save sequelize
+
+npm install --save mysql2
+
+npm install --save-dev sequelize-cli
+
+````js
+require('dotenv').config(); 
+const path = require("path");
+
+module.exports = {
+   config: path.resolve("./src/config", "config.json"),
+   "models-path": path.resolve("./src/models"),
+   "seeders-path": path.resolve("./src/database/seeders"),
+   "migrations-path": path.resolve("./src/database/migrations"),
+};
+````
+
+```env
+NODE_ENV=development
+DATABASE_URL=mysql://root:1234@localhost:3307
+```
+
+```sh
+npx sequelize-cli init
+```
