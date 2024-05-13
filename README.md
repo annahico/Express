@@ -31,3 +31,8 @@ npx sequelize-cli init
 npx sequelize-cli model:generate --name Role --attributes name:string
 ```
 
+```sh
+npx sequelize-cli db:migrate
+```
+
+
