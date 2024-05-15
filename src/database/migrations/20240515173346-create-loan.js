@@ -14,17 +14,11 @@ module.exports = {
         type: Sequelize.DATE
       },
       due_date: {
-        allowNull: false,
+        allowNull: false, 
         type: Sequelize.DATE
       },
       return_date: {
         type: Sequelize.DATE
-      },
-      user_id: {
-        type: Sequelize.STRING,
-      },
-      book_id: {
-        type: Sequelize.STRING,
       },
       id_user: {
         type: Sequelize.INTEGER,
@@ -50,6 +44,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    });
+
+    await queryInterface.addConstraint('favourite_books', {  //para que no se repitan los datos
+      fields: ['id_user', 'id_book', 'loan_date'],
+      type: 'unique',
+      name: 'user_book_unique'
     });
   },
   async down(queryInterface, Sequelize) {

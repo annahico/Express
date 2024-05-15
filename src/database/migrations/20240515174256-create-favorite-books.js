@@ -9,12 +9,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.STRING
-      },
-      book_id: {
-        type: Sequelize.STRING
-      },
       id_user: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -39,6 +33,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    });
+
+    await queryInterface.addConstraint('favourite_books', {
+      fields: ['id_user', 'id_book'],
+      type: 'unique',
+      name: 'user_book_unique'
     });
   },
   async down(queryInterface, Sequelize) {
