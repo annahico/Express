@@ -14,10 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Book.init({
-    name: DataTypes.STRING
+    tittle: DataTypes.STRING,
+    gender: DataTypes.STRING,
+    id_author: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Book',
+    tableName: 'create-book'
   });
   return Book;
 };

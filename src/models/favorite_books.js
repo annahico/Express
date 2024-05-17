@@ -14,10 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Favorite_books.init({
-    name: DataTypes.STRING
+    id_user: DataTypes.INTEGER,
+    id_book: DataTypes.INTEGER,
+
   }, {
     sequelize,
     modelName: 'Favorite_books',
+    tableName: 'create-favourite-books'
   });
   return Favorite_books;
 };
