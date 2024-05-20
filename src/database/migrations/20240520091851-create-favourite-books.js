@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Favorite_books', {
+    await queryInterface.createTable('favourite_books', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,17 +11,15 @@ module.exports = {
       },
       id_user: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         references: {
-          model: "users",
+          model: 'users',
           key: 'id'
         }
       },
       id_book: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         references: {
-          model: "books",
+          model: 'books',
           key: 'id'
         }
       },
@@ -42,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Favorite_books');
+    await queryInterface.dropTable('favourite_books');
   }
 };
