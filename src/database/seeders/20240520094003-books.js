@@ -12,27 +12,6 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-
-    await queryInterface.bulkInsert(
-			"Authors",
-			[
-        {
-          id:1,
-          name: "Dani",
-          nationality: "Español",
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          id: 2,
-          name: "Juan Pablo",
-          nationality: "Uruguayo",
-          createdAt: new Date(),
-          updatedAt: new Date()
-        }
-			],
-			{}
-		);
   },
 
   async down (queryInterface, Sequelize) {
@@ -42,7 +21,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-
-    await queryInterface.bulkDelete('Authors', null, {});
   }
 };
